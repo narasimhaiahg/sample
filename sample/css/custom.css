@@ -1,0 +1,19 @@
+.box{
+ float: right;
+margin-top: -6.4% !important;
+margin-right: -4.5% !important;
+background: #5188ba;
+color: #fff;
+text-align: center;
+line-height: 506%;
+border-bottom-right-radius: 12px !important;
+border-top-right-radius: 12px !important;
+}
+.balance {
+min-height:60px;
+padding-top:1px;
+ border: solid 1px; 
+ border-color:#C3C2C2;
+ border-radius:13px !important; 
+font-size:12px;
+}

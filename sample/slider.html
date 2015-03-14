@@ -1,0 +1,462 @@
+
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>HSAPlanner - HSA Asset Allocation Calculator</title>
+  <meta name="description" content="">
+  <meta name="author" content="Devenir">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <link href="favicon.ico" rel="icon" type="image/x-icon" />
+  
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="http://hsaplanner.com/hsaplanner/hsaalloccalc/css/custom-theme/jquery-ui-1.8.16.custom.css"> 
+   <link rel="stylesheet" href="http://hsaplanner.com/hsaplanner/hsaalloccalc/css/ui.css">
+<!--  <link  href="./assets/admin/layout/css/jquery-ui-1.8.16.custom.css">
+ <link href="./assets/admin/layout/css/ui.css" /> -->
+  <!-- JS -->
+   <script src="./ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+	
+ <script type="text/javascript" src="js/swfobject.js"></script>
+
+  <script type="text/javascript">
+  var newAllocation;
+  var isMobile = false;
+  $(function(){
+		var pieValues = ["15|0|5|50|30", "25|5|10|50|10", "35|10|15|35|5", "45|15|20|15|5", "50|20|25|0|5"];
+		var val = 0;
+		
+		var flashvars = {
+			pieColors:"#27a648|#72b6ea|#efb63b|#e76d35|#aa6dc9",
+			pieValues:"15|0|5|50|30"
+		};
+		var params = {
+			wmode:"transparent"
+		};
+		
+	swfobject.embedSWF("swf/piechart.swf", "flashContent", "316", "316", "9.0.0", "expressInstall.html", flashvars, params, {id:"flashMovieContent", name: "flashMovie"});
+
+		function getFlashMovieObject(movieName){
+			if (window.document[movieName]){
+				return window.document[movieName];
+			}
+			if (navigator.appName.indexOf("Microsoft Internet")==-1){
+				if (document.embeds && document.embeds[movieName])
+					return document.embeds[movieName];
+			}
+			else{
+				return document.getElementById(movieName);
+			}
+		}
+		
+		function drawPie(str){
+			var flashMovie=getFlashMovieObject("flashMovie");
+			flashMovie.drawPie(str);
+		}
+		
+		$(function() {
+			$('#calc').click(function() {
+				if(newAllocation == true){ //If allocation is different to the last one then animate pie chart.
+					drawPie(pieValues[arrayValue]);
+				}
+			});
+		});
+	});
+</script>
+
+  
+  <!--[if lt IE 9]>
+ <link rel="stylesheet" href="css/ie.css">
+ <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]><link rel="stylesheet" href="css/ie7.css"><![endif]-->
+  <script type="text/javascript" src="http://hsaplanner.com/hsaplanner/hsaalloccalc/js/swfobject.js"></script>
+
+  <!-- JS -->
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+ 
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
+<link href="./assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="./assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+
+<link href="./assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+<link href="./assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
+<!-- END GLOBAL MANDATORY STYLES -->
+<link href="./assets/global/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet"/>
+<!-- BEGIN THEME STYLES -->
+<link href="./assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
+<link href="./assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
+<link href="./assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css"/>
+<link id="style_color" href="./assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css"/>
+<link href="./assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="./assets/admin/pages/css/portfolio.css" rel="stylesheet" type="text/css"/>
+<link href="./assets/global/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet" type="text/css"/>
+<!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script-->
+<!-- END THEME STYLES -->
+<link rel="shortcut icon" href="favicon.ico"/>
+
+
+  <!--[if lt IE 9]>
+	<link rel="stylesheet" href="css/ie.css">
+	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]><link rel="stylesheet" href="css/ie7.css"><![endif]-->
+  <!-- <script type="text/javascript" src="http://hsaplanner.com/hsaplanner/hsaalloccalc/js/swfobject.js"></script> -->
+ 
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
+<link href="./assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="./assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+<link href="./assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="./assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+<link href="./assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
+<link href="./css/style.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+#sliders section{
+	width: 100% !important;
+}
+#sliders .info h3{
+	margin: 0;
+}
+.o-h{
+	overflow: hidden;
+}
+</style>
+</head>
+
+
+
+
+<body class="page-header-fixed " >
+	<div class="page-header navbar navbar-fixed-top">
+	<!-- BEGIN HEADER INNER -->
+	<div class="page-header-inner">
+		<!-- BEGIN LOGO -->
+		<div class="page-logo">
+			<a href="index.html" style="text-decoration:none">
+			<h2 class="pheaderhsa">HSA <span class="plannerheader">Planner</span></h2>
+			</a>
+			
+		</div>
+		<!-- END LOGO -->
+		<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+		
+		<!-- END RESPONSIVE MENU TOGGLER -->
+		<!-- BEGIN TOP NAVIGATION MENU -->
+		
+		<!-- END TOP NAVIGATION MENU -->
+	</div>
+	<!-- END HEADER INNER -->
+</div>
+<div class="clearfix">
+</div>
+		<div id="" class="page-content">
+											
+			<div class="container" style="margin-top:46px;">
+			
+
+			
+			<div class="col-lg-6 col-md-6">
+				<div class="portlet light bordered o-h">
+						<div class="portlet-body">
+				<div id="sliders" class="" style="background:white !important;margin-top:-2%" >
+					<div id="inputs">
+					<section min=18 max=100>
+						<div class="info">
+							<h3>Age<a class="helpBtn">i</a></h3>
+							<p class="amount"><span class="hl"></span><span class="output">55</span></p>
+						</div>
+						<div class="slider"></div>
+						<p class="help"><b>Age</b>Your current age<span class="closeHelp">x</span></p>
+					</section>
+
+					<section min=0 max=100>
+						<div class="info">
+							<h3>Current HSA Balance<a class="helpBtn">i</a></h3>
+							<p class="amount"><span class="hl"></span><span class="output">5</span>k</p>
+						</div>
+						<div class="slider"></div>
+						<p class="help"><b>Current HSA Balance</b>The current account balance in your health savings account including any invested balances.<span class="closeHelp">x</span></p>
+					</section>
+					
+					<section min=0 max=10>
+						<div class="info">
+							<h3>Anticipated Annual HSA Contributions<a class="helpBtn">i</a></h3>
+							<p class="amount"><span class="hl"></span><span class="output">2</span>k</p>
+						</div>
+						<div class="slider"></div>
+						<p class="help"><b>Anticipated Annual HSA Contributions</b>Expected annual dollar contributions to your HSA based on either individual or family policy.<span class="closeHelp">x</span></p>
+					</section>
+					
+					<section class="radio" style="margin:0 0 10px 0">
+						<div class="info">
+							<h3><span>General Health</span><a class="helpBtn" alt="Please choose the description below which most closely represents your current state of health.">i</a></h3>
+							<p class="amount"><span class="hl"></span><span class="output">Average</span></p>
+						</div>	
+
+						<div class="radioBtns">
+							<a alt="Chronic medical condition or have a strong family history of chronic diseases, overweight, smoke regularly, don�t exercise, poor dietary habits, and do not utilize preventative medicine." style="width:18%;font-size:11px">Poor</a>
+							<a alt="Chronic medical condition under control, family history of chronic diseases, slightly overweight, and get little exercise." style="width:18%;font-size:11px">Fair</a>
+							<a class="selected" alt="No chronic medical condition, try to exercise and eat healthy when possible but often do not." style="width:18%;font-size:11px">Average</a>
+							<a class="twolines" alt="Little family history of chronic medical conditions, frequently exercise and have good dietary habits." style="width:18%;font-size:11px">Above Average</a>
+							<a alt="Live an active lifestyle with regular exercise, follow recommended dietary guidelines, and regularly utilize preventive medical services." style="width:18%;font-size:11px">Excellent</a>
+						</div>
+							
+						<p class="help"></p>
+					</section>
+					
+					<section min=0 max=25>
+						<div class="info">
+							<h3>Estimated Annual OOP Healthcare Costs<a class="helpBtn">i</a></h3>
+							<p class="amount"><span class="hl"></span><span class="output">6</span>k</p>
+						</div>
+						<div class="slider"></div>
+						<p class="help"><b>Estimated Annual Out of Pocket Medical Expenses (Medical + Perscriptions - less Insurance Payments)</b>The approximate dollar amount you spend out of your own pocket on medical expenses not covered by insurance on an annual basis, i.e. preventative care, immunizations, medications, etc.<span class="closeHelp">x</span></p>
+					</section>
+					
+					<section class="radio" style="margin:0 0 15px 0">
+						<div class="info">
+							<h3>Risk tolerance</h3>
+							<p class="amount"><span class="hl"></span><span class="output ">Low</span></p>
+						</div>	
+
+						<div class="radioBtns">
+							<a class="selected" alt="I am very concerned about my investments losing value and would sell quickly if my investments lose value." style="width:18%;font-size:11px">Low</a>
+							<a class="twolines fairly" alt="Daily market fluctuations concern me, but I tend not to overreact.  If my investment loses 5% or more over a quarter, I would sell." style="width:18%;font-size:11px;padding:3% 0 3% 0">Fairly Low</a>
+							<a alt="I am equally concerned about my investments losing or gaining value.  I am comfortable with taking some risk, but am also comfortable with giving up some return in exchange for excessive risk." style="width:18%;font-size:11px">Average</a>
+							<a class="twolines fairly fairly-high" alt="I understand that daily changes in the markets can fluctuate significantly.  If market conditions result in 20-30% losses in a year, I would continue to hold my investments for the long-term." style="width:18%;font-size:11px">Fairly High</a>
+							<a alt="My primary goal is for my investment to gain value.  If market conditions resulted in losses of 30-40% in a year, I would stick with my long-term investment plan and would likely add to my investment." style="width:18%;font-size:11px">High</a>
+						</div>
+							
+						<p class="help"></p>
+					</section>
+					
+					<section class="radio" >
+						<div class="info">
+							<h3><span>Economic outlook</span><a class="helpBtn" alt="Describe your personal view of the economy going forward and where you see it headed over the time you plan to invest in your HSA.">i</a></h3>
+							<p class="amount"><span class="hl"></span><span class="output">Negative</span></p>
+						</div>
+						
+						<div class="radioBtns" >
+							<a class="selected" alt="Perceive no economic growth." style="width:18%;font-size:11px">Negative</a>
+							<a class="twolines" alt="Perceive slight economic growth." style="width:18%;font-size:11px">Slower Growth</a>
+							<a class="twolines" alt="Perceive the economy to grow at a moderate pace in the intermediate future." style="width:18%;font-size:11px">Average Growth</a>
+							<a class="threelines fairly" alt="Perceive the economy to grow at a higher rate over a prolonged period of time." style="width:31%;font-size:11px">Above Average Growth</a>
+						</div>
+					</section>
+					<button class="btn btn-default pull-left" id="back" style="background-color: #1BBC9B;color:#ffffff">Back</button>
+					<button class="btn btn-default pull-right" style="background-color: #1BBC9B;color:#ffffff">Calculate</button>
+					</div>
+					</div></div>
+					</div>
+				</div>
+
+
+					<div class="col-lg-6 col-md-6">
+						<div class="portlet light bordered o-h">
+						<div class="portlet-body">
+							<div id="pie_chart_1" class="chart" >
+											</div>
+											<div id="" class="chart" >
+						<div class="" style="width: 100%;background:white !important;float:left;margin-top:15px">
+							
+							<div id="allocations">
+							<h2>Resulting Allocations</h2>
+							<table id="chartData">
+							<tbody><tr class="green" desc="0">
+								  <td ><span></span><u>Large-Cap Equity</u></td>
+								  <td><b>15</b>%</td>
+								</tr>
+
+								<tr class="blue dark" desc="1">
+								  <td ><span></span><u>Small/Mid-Cap Equity</u></td>
+								  <td><b>0</b>%</td>
+								</tr>
+
+								<tr class="yellow" desc="2">
+								  <td ><span></span><u>International</u></td>
+								  <td><b>5</b>%</td>
+								</tr>
+
+								<tr class="orange dark" desc="3">
+								  <td ><span></span><u>Fixed Income</u></td>
+								  <td><b>50</b>%</td>
+								</tr>
+
+								<tr class="purple" desc="4" style="border-bottom-style: none;">
+								  <td ><span></span><u>Savings Account</u></td>
+								  <td><b>30</b>%</td>
+								</tr>
+							</tbody></table>
+						
+					
+						</div>
+						<button class="btn btn-default pull-right" id="setallocations" style="margin:0 35%;background-color: #1BBC9B;color:#ffffff">Set My Allocations</button>
+					</div>
+									
+									 
+									
+				</div>
+			</div>
+				
+				
+								
+		  </div>				
+								
+				
+		</div><!-- End content -->
+				
+		</div><!-- End content -->
+			
+   
+  </div><!-- end of wrapper -->
+  <div class="page-footer" style="background:black !important">
+	<div class="page-footer-inner">
+		
+		&copy; Copyright 2015 Devenir Group, LLC. All Rights Reserved.
+	</div>
+	<div class="scroll-to-top">
+		<i class="icon-arrow-up"></i>
+	</div>
+</div>
+  <script defer src="js/jquery.detectflash.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+   <script type="text/javascript">  
+    $(document).ready(function() {  
+		if ($.browser.flash == false){
+			$('#flashContent').remove();
+			$('#chart').css('display', 'block');
+		}
+	});
+	</script>
+	<script type="text/javascript">  
+    
+	$(document).ready(function() {  
+		$("#setallocations").click (function(){
+			window.location.replace("Myallocations.html");
+		});
+	});
+	
+	$(document).ready(function() {  
+		$("#back").click (function(){
+			window.location.replace("index.html");
+		});
+	});
+	</script>
+  
+ <script src="./assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>	
+
+<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+<script src="./assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+
+<!-- END CORE PLUGINS -->
+
+
+<script src="./assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="./assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+<script src="./assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+<script src="./assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+<script src="./assets/admin/pages/scripts/charts-flotcharts.js"></script>
+<script src="./assets/admin/pages/scripts/components-jqueryui-sliders.js"></script>
+
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script type="text/javascript" src="./assets/global/plugins/fuelux/js/spinner.min.js"></script>
+<script type="text/javascript" src="./assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js"></script>
+<script type="text/javascript" src="./assets/global/plugins/jquery-inputmask/jquery.inputmask.bundle.min.js"></script>
+<script type="text/javascript" src="./assets/global/plugins/jquery.input-ip-address-control-1.0.min.js"></script>
+<script src="./assets/global/plugins/bootstrap-pwstrength/pwstrength-bootstrap.min.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script src="./assets/global/plugins/amcharts/amcharts/amcharts.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/amcharts/amcharts/serial.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/amcharts/amcharts/pie.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/amcharts/amcharts/radar.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/amcharts/amcharts/themes/light.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/amcharts/amcharts/themes/patterns.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/amcharts/amcharts/themes/chalk.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/amcharts/ammap/ammap.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/amcharts/ammap/maps/js/worldLow.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/amcharts/amstockcharts/amstock.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+<script src="./assets/global/plugins/flot/jquery.flot.min.js"></script>
+<script src="./assets/global/plugins/flot/jquery.flot.resize.min.js"></script>
+<script src="./assets/global/plugins/flot/jquery.flot.pie.min.js"></script>
+<script src="./assets/global/plugins/flot/jquery.flot.stack.min.js"></script>
+
+
+<script src="./assets/global/plugins/flot/jquery.flot.crosshair.min.js"></script>
+<script src="./assets/global/plugins/flot/jquery.flot.categories.min.js" type="text/javascript"></script>
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+
+
+<script src="./assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="./assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+<script src="./assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+<script src="./assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+<script src="./assets/admin/pages/scripts/charts-amcharts.js"></script>
+<script src="./assets/admin/pages/scripts/charts-flotcharts.js"></script>
+<script src="./assets/admin/pages/scripts/components-form-tools.js"></script>
+
+
+<script src="./assets/admin/pages/scripts/portfolio.js"></script>
+
+
+<script defer src="http://hsaplanner.com/hsaplanner/hsaalloccalc/js/chart.js"></script>
+
+
+<script>
+jQuery(document).ready(function() {       
+   // initiate layout and plugins
+   Metronic.init(); // init metronic core components
+ // init quick sidebar
+Demo.init(); // init demo features
+   ChartsAmcharts.init(); 
+    ChartsFlotcharts.init();
+   ChartsFlotcharts.initCharts();
+   ChartsFlotcharts.initPieCharts();
+   ChartsFlotcharts.initBarCharts();// init demo charts
+
+});
+</script>
+  <script defer src="js/jquery.detectflash.js"></script>
+   <script type="text/javascript">  
+    $(document).ready(function() {  
+		if ($.browser.flash == false){
+			$('#flashContent').remove();
+			$('#pie_chart_1').css('display', 'block');
+		}
+	});
+	</script>
+	
+
+<style>
+<!-- .content
+{
+max-width: 950px;
+min-width: 840px;
+background: #FFFFFF;
+overflow: hidden;
+margin: 0 auto;
+padding: 30px;
+}
+ -->
+</style>
+
+
+	
+
+</body>
+</html>
