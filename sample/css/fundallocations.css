@@ -1,0 +1,54 @@
+.body-height 
+	{
+		height:521px ;
+	}
+
+.hsa-btn
+	{
+		background: #5188ba;
+		color: #fff;
+		text-align: center;
+		line-height: 60px;
+		border-bottom-right-radius: 12px !important;
+		border-top-right-radius: 12px !important;
+	}
+
+.age-slider
+	{
+		height:20px;
+		background:#6297c8
+	}
+	
+.age-sli
+	{
+		height:60px;
+		padding-top:0px; 
+		border: solid 1px; 
+		border-color:#C3C2C2;
+		border-radius:13px !important;  
+		font-size:11px;
+	}
+
+.hsabal-btn
+	{
+		background: #5188ba;
+		color: #fff;
+		text-align: center;
+		line-height: 60px;
+		border-bottom-right-radius: 12px !important;
+		border-top-right-radius: 12px !important;
+	}
+	
+.hsa-box
+	{
+		height:60px;
+		padding-top:0px; 
+		border: solid 1px; 
+		border-color:#C3C2C2;
+		border-radius:13px !important;  
+		font-size:11px;
+		
+	}
+.hsa_box {
+	margin-top:-15px !important;
+}	

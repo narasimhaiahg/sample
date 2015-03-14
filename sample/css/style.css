@@ -1,0 +1,164 @@
+
+.menutop {
+	margin-top: 27% !important;
+}
+.menu-font {
+	font-size:13px !important;
+}
+.menu-bold {
+	font-weight: bold;
+}
+.ui-slider-horizontal .ui-slider-handle {
+	border-radius: 8px !important;
+	width: 29px !important; 
+	height: 18px !important;
+	margin-top: 2px !important;
+}
+.portchartbody
+{
+font-size:12px !important;
+margin-top:-19px;
+margin-left:-12px;
+margin-right:-11px;
+}
+.twidth {
+	width:15%;
+}
+.total-content {
+	text-align:center;background-color:#00B14E;color:#ffffff;
+}
+.total-content1 {
+	text-align:center;background-color:#89c4f4;color:#ffffff;
+}
+.heading-content {
+font-size:11px;background-color:#89c4f4;color:#ffffff;width:5%;
+}
+.heading-content1 {
+font-size:11px;background-color:#00B14E;color:#ffffff;width:6%;
+}
+.gray-textbox {
+border:none;background-color:#f9f9f9;width:44px !important;
+}
+.white-textbox {
+border:none;background-color:#ffffff;width:44px !important;
+}
+.space
+{
+margin-bottom: 5px !important;
+}
+@media only screen and (max-width: 320px) {
+
+   .btn-menu-font {font-size: 10px !important; }
+   .hsa-btn { padding:0 5px !important; margin:5px 0 !important}
+   .hsabal-btn { padding:0 2px !important; }
+   .annual-slider { margin:-72px -5px !important }
+   .contribution-btn { margin:-74px -5px !important }
+   .menu-height { height: 150px !important }
+   .menu-height-risk { height:120px !important }
+   .menu-font { font-size:10px !important }
+   .age-slider { margin:10px 10px !important }
+   .font-green-haze { font-size:14px !important }
+   .body-height { height:760px !important }
+   .age-sli { font-size:9px !important ; margin:5px 0 !important}
+}
+
+.hsa-h {
+	color:#A9C14A;font-size:27px;margin-top:4px !important;
+}
+.planner-h {
+	font-size:27px;color:#5DA8A9;margin-top:4px !important;
+}
+.current-table {
+	font-size:11px !important;color:#89D5EC;width:6%;text-align:center !important;
+}
+.allocation-table {
+	font-size:11px !important;color:#83D2A6;width:6%;text-align:center !important;
+}
+.th-width {
+	width:6% !important;
+}
+.td-padd {
+	padding:35px 0 !important;
+}
+.table-height {
+	height:450px;overflow:auto;font-size:11px !important;
+}
+.savings-label {
+	background-color:orange;padding-left:12px !important;border-radius:5px !important;
+}
+.fixed-label {
+	background-color:red;padding-left:12px !important;border-radius: 5px !important;
+}
+.national-label {
+	background-color:#DFBA49;padding-left:12px !important;border-radius: 5px !important;
+}
+.small-label {
+	background-color:#89c4f4;padding-left:12px !important;border-radius: 5px !important;
+}
+.large-label {
+	background-color:green;padding-left:12px !important;border-radius: 5px !important;
+}
+.hsa-right {
+	font-weight:500;text-align:right;margin-right:2% !important;
+}
+.orange {
+	color:orange !important;
+}
+.red {
+	color:red !important;
+}
+.li-orange	{
+	color:#DFBA49 !important;
+}
+.blue {
+	color:#89c4f4 !important;
+}
+.btn-width {
+	width:100% !important;
+}
+@media only screen and (max-width: 768px) {
+
+	.fairly { padding:10px 0 10px 0 !important }
+	
+}
+
+@media only screen and (max-width: 800px) {
+
+	.fairly { padding:10px 0 10px 0 !important }
+	
+}
+
+@media only screen and (max-width: 980px) {
+
+	.fairly { padding:10px 0 10px 0 !important }
+	
+}
+@media only screen and (max-width: 1280px) {
+
+	.fairly-high { padding:10px 0 10px 0 !important }
+	
+}
+@media only screen and (max-width: 360px) {
+
+	h3 { font-size:8px !important }
+	button { font-size:12px !important }
+	a { font-size:8px !important }
+	.slider { width:67% !important }
+	.fairly { padding:5px 0px !important }
+	.fairly-high { padding:5px 0px !important }
+	.amount { font-size:10px !important }
+	#chartData { font-size:11px !important; }
+	h2 { font-size:13px !important }
+	.ui-slider-horizontal .ui-slider-handle {
+		border-radius: 8px !important;
+		width: 25px !important; 
+		height: 16px !important;
+		margin-top: 3px !important;
+	}
+}
+@media only screen and (max-width: 320px) {
+	#sliders { width:100% !important; }
+	.fairly-high { padding:10px 0 10px 0 !important }
+	
+}
+
